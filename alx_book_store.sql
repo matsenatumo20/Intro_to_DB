@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS BOOKS (
 );
 
 -- Create Customers table
-CREATE TABLE IF NOT EXISTS CUSTOMERS (
+CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT AUTO_INCREMENT,
     customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS ORDERS (
     customer_id INT NOT NULL,
     order_date DATE NOT NULL,
     PRIMARY KEY (order_id),
-    FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 -- Create Order_Details table
@@ -52,4 +52,5 @@ CREATE TABLE IF NOT EXISTS ORDER_DETAILS (
     FOREIGN KEY (order_id) REFERENCES ORDERS(order_id),
     FOREIGN KEY (book_id) REFERENCES BOOKS(book_id)
 );
+
 
