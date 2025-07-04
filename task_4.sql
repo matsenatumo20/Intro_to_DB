@@ -1,4 +1,8 @@
 -- task_4.sql
 
--- Show the full description of the Books table
-SHOW CREATE TABLE Books;
+-- Select the column information from INFORMATION_SCHEMA.COLUMNS
+SELECT COLUMN_NAME, COLUMN_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'alx_book_store'
+AND TABLE_NAME = 'Books';
+
